@@ -1,36 +1,27 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
+import GuestLayout from './layout/GuestLayout'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Homepage from './pages/Homepage'
+import Plants from './pages/PlantsPage'
 
 
 function App() {
   
 
-  return (
-    <>
+  return ( 
+     
+        <Routes>
+          <Route element={<GuestLayout />}>
+            <Route path="/" element={<Homepage />} />
+            <Route path="/plants" element={<Plants />} />
+          </Route>
+        </Routes>
+       
       
-    <main>
-        <section >
-            <div class="container text-center">
-
-            <h1 class="pt-4">The alchemist's Garden</h1>
-            <h2>Explore the arcane botany of healing</h2>
-            <h3>Benvenuti nel giardino dell'alchmista</h3>    
-            
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum exercitationem expedita amet minima architecto,
-                 aliquid, quasi enim cumque, odio nesciunt sed vero. Aperiam eaque accusantium temporibus. Obcaecati delectus enim illum!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum exercitationem expedita amet minima architecto,
-                 aliquid, quasi enim cumque, odio nesciunt sed vero. Aperiam eaque accusantium temporibus. Obcaecati delectus enim illum!
-            </p>
-            
-
-            </div>
-            
-        </section>       
-        
-
-    </main>
-    </>
+    
+    
   )
 }
 
