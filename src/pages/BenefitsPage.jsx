@@ -1,15 +1,15 @@
 
 import { useEffect, useState } from "react";
-import fetchObjects from "../services/fetchObjects";
 import { Link } from "react-router-dom";
+import fetchObjects from "../services/fetchObjects";
 
-const PlantsPage =() => {
-  const [plants, setPlants] = useState([]);
+const BenefitsPage =()  =>{
+  const [benefits, setBenefits] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetchObjects("plants",setPlants, setIsLoading, setError );
+    fetchObjects("benefits",setBenefits, setIsLoading, setError );
   }, []);
 
   if (isLoading) {
@@ -34,7 +34,7 @@ const PlantsPage =() => {
             <div className="container mt-5">
                     {/* Introduzione */}
                     <header className="text-center mb-5">
-                        <h1 className="display-5 fw-bold text-success">Catalogo delle Piante</h1>
+                        <h1 className="display-5 fw-bold text-success">Catalogo dei benefici</h1>
                         <p className="lead text-muted">
                         Esplora le meraviglie botaniche raccolte nel nostro giardino alchemico.  
                         Qui troverai piante medicinali, aromatiche e rare, ciascuna con la propria storia e i suoi benefici.
@@ -48,31 +48,20 @@ const PlantsPage =() => {
                         <thead className="table-success">
                             <tr>
                             <th>ID</th>
-                            <th>Nome Scientifico</th>
-                            <th>Nome Comune</th>
-                            <th>Famiglia</th>
-                            <th>Habitat</th>
-                            <th>Tossica</th>
+                            <th>Nome</th>
+                            <th>Descrizione</th>
                             <th>Azioni</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {plants.map((plant) => (
-                            <tr key={plant.id}>
-                                <td>{plant.id}</td>
-                                <td><em>{plant.scientificName}</em></td>
-                                <td>{plant.commonName}</td>
-                                <td>{plant.family?.name || "—"}</td>
-                                <td>{plant.habitat || "—"}</td>
+                            {benefits.map((benefit) => (
+                            <tr key={benefit.id}>
+                                <td>{benefit.id}</td>
+                                <td><em>{benefit.name}</em></td>
+                                <td>{benefit.description}</td>
+                                
                                 <td>
-                                {plant.toxic ? (
-                                    <span className="badge bg-danger">Sì</span>
-                                ) : (
-                                    <span className="badge bg-success">No</span>
-                                )}
-                                </td>
-                                <td>
-                                <Link to={`/plants/${plant.id}`} className="btn btn-outline-success btn-sm">Dettagli</Link>
+                                <Link to={`/benefits/${benefit.id}`} className="btn btn-outline-success btn-sm">Dettagli</Link>
                                 </td>
                             </tr>
                             ))}
@@ -81,9 +70,9 @@ const PlantsPage =() => {
                     </div>
 
                     {/* Nessun risultato */}
-                    {plants.length === 0 && (
+                    {benefits.length === 0 && (
                         <div className="alert alert-warning mt-4 text-center">
-                        Nessuna pianta trovata.
+                        Nessun beneficio trovato.
                         </div>
                     )}
             </div>
@@ -91,5 +80,4 @@ const PlantsPage =() => {
     
   );
 }
-
-export default PlantsPage;
+export default BenefitsPage;

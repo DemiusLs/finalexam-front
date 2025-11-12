@@ -1,10 +1,11 @@
-import axios from "axios";
+import api from "./api";
 
-const fetchPlants = async(setPlants, setIsLoading ,setError) =>{
+
+const fetchObjects = async(objString ,setPlants, setIsLoading ,setError) =>{
 
     setIsLoading = true; 
     try {
-        const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/plants`);
+        const res = await api.get(`/${objString}`);
 
         if (Array.isArray(res.data)) {
             console.log(res.data)
@@ -23,4 +24,4 @@ const fetchPlants = async(setPlants, setIsLoading ,setError) =>{
 
 
 
-export default fetchPlants;
+export default fetchObjects;

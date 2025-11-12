@@ -19,7 +19,7 @@ const AppHeader = () =>{
                             <a className="nav-link" href="/plants">Plants</a>                            
                             </li>
                             <li className="nav-item">
-                            <a className="nav-link" href="#">Benefits</a>                            
+                            <a className="nav-link" href="/benefits">Benefits</a>                            
                             </li>
                             <li className="nav-item">
                             <a className="nav-link" href="#">Controindications</a>                            

@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import fetchSinglePlant from "../services/fetchSinglePlant";
+import fetchSingleObject from "../services/fetchSingleObject";
 
 const SinglePlantPage = () =>{
 
@@ -11,7 +11,7 @@ const SinglePlantPage = () =>{
 
     useEffect(() => {
     if (id) {
-      fetchSinglePlant(id, setPlant, setIsLoading, setError);
+      fetchSingleObject(id,"plants", setPlant, setIsLoading, setError);
     }
   }, [id]);
 
