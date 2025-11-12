@@ -67,7 +67,7 @@ const SingleFamilyPage = () =>{
                             <td>{plant.id}</td>
                             <td>{plant.commonName}</td>
                             <td><em>{plant.scientificName}</em></td>
-                            <td>{plant.family?.name || "—"}</td>
+                            <td>{plant.family || "—"}</td>
                             <td>
                             {plant.toxic ? (
                                 <span className="badge bg-danger">Sì</span>
