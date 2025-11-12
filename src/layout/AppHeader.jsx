@@ -22,10 +22,10 @@ const AppHeader = () =>{
                             <a className="nav-link" href="/benefits">Benefits</a>                            
                             </li>
                             <li className="nav-item">
-                            <a className="nav-link" href="#">Controindications</a>                            
+                            <a className="nav-link" href="/controindications">Controindications</a>                            
                             </li>
                             <li className="nav-item">
-                            <a className="nav-link" href="#">Families</a>                            
+                            <a className="nav-link" href="/families">Families</a>                            
                             </li>
                         </ul>
                         <form className="d-flex" role="search">
