@@ -5,6 +5,7 @@ import GuestLayout from './layout/GuestLayout'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Homepage from './pages/Homepage'
 import Plants from './pages/PlantsPage'
+import SinglePlantPage from './pages/SinglePlantPage'
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
           <Route element={<GuestLayout />}>
             <Route path="/" element={<Homepage />} />
             <Route path="/plants" element={<Plants />} />
+            <Route path="/plants/:id" element={<SinglePlantPage />} />
           </Route>
         </Routes>
        
