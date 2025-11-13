@@ -3,7 +3,7 @@ import api from "./api";
 
 const fetchObjects = async(objString ,setPlants, setIsLoading ,setError) =>{
 
-    setIsLoading = true; 
+    setIsLoading(true); 
     try {
         const res = await api.get(`/${objString}`);
 
@@ -18,7 +18,7 @@ const fetchObjects = async(objString ,setPlants, setIsLoading ,setError) =>{
         setError("Errore nel caricamento");
     }finally{
 
-        setIsLoading = false;
+        setIsLoading(false); 
     }
 }
 

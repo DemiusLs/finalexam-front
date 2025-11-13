@@ -1,6 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import fetchSingleObject from "../services/fetchSingleObject";
+import PlantTable from "../components/PlantTable";
 
 const SingleControindicationPage = () =>{
 
@@ -49,45 +50,7 @@ const SingleControindicationPage = () =>{
             <section>
                 <h3 className="mb-3 text-success">Piante con queste controindicazioni</h3>
                 {controindication.plants && controindication.plants.length > 0 ? (
-                <div className="table-responsive">
-                    <table className="table table-hover align-middle">
-                    <thead className="table-success">
-                        <tr>
-                        <th>ID</th>
-                        <th>Nome comune</th>
-                        <th>Nome scientifico</th>
-                        <th>Famiglia</th>
-                        <th>Tossica</th>
-                        <th>Azioni</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {controindication.plants.map((plant) => (
-                        <tr key={plant.id}>
-                            <td>{plant.id}</td>
-                            <td>{plant.commonName}</td>
-                            <td><em>{plant.scientificName}</em></td>
-                            <td>{plant.family || "—"}</td>
-                            <td>
-                            {plant.toxic ? (
-                                <span className="badge bg-danger">Sì</span>
-                            ) : (
-                                <span className="badge bg-success">No</span>
-                            )}
-                            </td>
-                            <td>
-                            <Link
-                                to={`/plants/${plant.id}`}
-                                className="btn btn-outline-success btn-sm"
-                            >
-                                Dettagli
-                            </Link>
-                            </td>
-                        </tr>
-                        ))}
-                    </tbody>
-                    </table>
-                </div>
+                <PlantTable plants={controindication.plants}/>
                 ) : (
                 <div className="alert alert-warning text-center mt-4">
                     Nessuna pianta associata a questa controindicazione.

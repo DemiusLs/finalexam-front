@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import fetchObjects from "../services/fetchObjects";
+import SmallTable from "../components/SmallTable";
 
 const BenefitsPage =()  =>{
   const [benefits, setBenefits] = useState([]);
@@ -42,39 +43,7 @@ const BenefitsPage =()  =>{
                     </header>
                     
 
-                    {/* Tabella */}
-                    <div className="table-responsive">
-                        <table className="table table-striped table-hover align-middle">
-                        <thead className="table-success">
-                            <tr>
-                            <th>ID</th>
-                            <th>Nome</th>
-                            <th>Descrizione</th>
-                            <th>Azioni</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {benefits.map((benefit) => (
-                            <tr key={benefit.id}>
-                                <td>{benefit.id}</td>
-                                <td><em>{benefit.name}</em></td>
-                                <td>{benefit.description}</td>
-                                
-                                <td>
-                                <Link to={`/benefits/${benefit.id}`} className="btn btn-outline-success btn-sm">Dettagli</Link>
-                                </td>
-                            </tr>
-                            ))}
-                        </tbody>
-                        </table>
-                    </div>
-
-                    {/* Nessun risultato */}
-                    {benefits.length === 0 && (
-                        <div className="alert alert-warning mt-4 text-center">
-                        Nessun beneficio trovato.
-                        </div>
-                    )}
+                   <SmallTable elementList={benefits} route={"benefits"} emptyString={"Nessuna beneficio trovato."} />
             </div>
     </section>
     

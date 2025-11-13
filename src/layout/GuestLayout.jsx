@@ -3,7 +3,7 @@ import AppHeader from "./AppHeader";
 import AppFooter from "./AppFooter";
 
 
-const GuestLayout = ({children}) =>{
+const GuestLayout = () =>{
 
     return(
         <div>

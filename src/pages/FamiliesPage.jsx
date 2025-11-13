@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import fetchObjects from "../services/fetchObjects";
+import SmallTable from "../components/SmallTable";
 
 const FamiliesPage =()  =>{
   const [families, setFamilies] = useState([]);
@@ -42,39 +43,8 @@ const FamiliesPage =()  =>{
                     </header>
                     
 
-                    {/* Tabella */}
-                    <div className="table-responsive">
-                        <table className="table table-striped table-hover align-middle">
-                        <thead className="table-success">
-                            <tr>
-                            <th>ID</th>
-                            <th>Nome</th>
-                            <th>Descrizione</th>
-                            <th>Azioni</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {families.map((familiy) => (
-                            <tr key={familiy.id}>
-                                <td>{familiy.id}</td>
-                                <td><em>{familiy.name}</em></td>
-                                <td>{familiy.description}</td>
-                                
-                                <td>
-                                <Link to={`/families/${familiy.id}`} className="btn btn-outline-success btn-sm">Dettagli</Link>
-                                </td>
-                            </tr>
-                            ))}
-                        </tbody>
-                        </table>
-                    </div>
-
-                    {/* Nessun risultato */}
-                    {families.length === 0 && (
-                        <div className="alert alert-warning mt-4 text-center">
-                        Nessuna famiglia trovata.
-                        </div>
-                    )}
+                   {/* Tabella */}
+                    <SmallTable elementList={families} route={"families"} emptyString={"Nessuna famiglia trovata."} />
             </div>
     </section>
     

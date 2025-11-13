@@ -40,72 +40,74 @@ const SinglePlantPage = () =>{
                 <div className="card shadow-sm border-0">
                     <div className="row g-0">
                     {/* Immagine */}
-                    <div className="col-md-4">
+                    <div className="col-lg-4 col-md-5">
                         <img
                         src={plant.imageUrl || "https://via.placeholder.com/400x300?text=No+Image"}
                         alt={plant.commonName}
-                        className="img-fluid rounded-start"
+                        className="img-fluid rounded-start h-100 object-cover "
                         />
                     </div>
 
                     {/* Dettagli */}
-                    <div className="col-md-8">
+                    <div className="col-lg-8 col-md-7">
                         <div className="card-body">
-                        <h2 className="card-title text-success fw-bold">
-                            {plant.commonName}
-                        </h2>
-                        <h5 className="text-muted">
-                            <em>{plant.scientificName}</em>
-                        </h5>
-                        <p className="mt-3">{plant.description || "Nessuna descrizione disponibile."}</p>
+                            <h2 className="card-title text-success fw-bold mb-1">
+                                {plant.commonName}
+                            </h2>
+                            <h5 className="text-muted fst-italic mb-3">
+                                <em>{plant.scientificName}</em>
+                            </h5>
+                            <p className="mt-3 text-secondary">{plant.description || "Nessuna descrizione disponibile."}</p>
 
-                        <ul className="list-group list-group-flush mt-4">
-                            <li className="list-group-item">
-                            <strong>Famiglia:</strong> {plant.family?.name || "—"}
-                            </li>
-                            <li className="list-group-item">
-                            <strong>Habitat:</strong> {plant.habitat || "—"}
-                            </li>
-                            <li className="list-group-item">
-                            <strong>Tossica:</strong>{" "}
-                            {plant.toxic ? (
-                                <span className="badge bg-danger">Sì</span>
-                            ) : (
-                                <span className="badge bg-success">No</span>
-                            )}
-                            </li>
-                        </ul>
-                        </div>
+                            <ul className="list-group list-group-flush mt-4">
+                                <li className="list-group-item">
+                                <strong>Famiglia:</strong> {plant.family || "—"}
+                                </li>
+                                <li className="list-group-item">
+                                <strong>Habitat:</strong> {plant.habitat || "—"}
+                                </li>
+                                <li className="list-group-item">
+                                <strong>Tossica:</strong>{" "}
+                                {plant.toxic ? (
+                                    <span className="badge bg-danger">Sì</span>
+                                ) : (
+                                    <span className="badge bg-success">No</span>
+                                )}
+                                </li>
+                            </ul>               
+
+                            <div className="row px-3 pb-4 mt-3">
+                                <div className="col-lg-6 mt-3">
+                                    <h5 className="fw-semibold">Benefici:</h5>
+                                    {plant.benefits?.length ? (
+                                    <ul className="list-group list-group-flush mt-2 ">
+                                        {plant.benefits.map((b) => (
+                                        <li key={b.id} className="list-group-item">{b.name}</li>
+                                        ))}
+                                    </ul>
+                                    ) : (
+                                    <p className="text-muted">Nessun beneficio registrato.</p>
+                                    )}
+                                </div>
+                                <div className="col-lg-6 mt-3">
+                                    <h5 className="fw-semibold">Controindicazioni:</h5>
+                                    {plant.benefits?.length ? (
+                                    <ul className="list-group list-group-flush mt-2 ">
+                                        {plant.controindications.map((c) => (
+                                        <li key={c.id} className="list-group-item">{c.name}</li>
+                                        ))}
+                                    </ul>
+                                    ) : (
+                                    <p className="text-muted">Nessun beneficio registrato.</p>
+                                    )}
+                                </div>                            
+                            </div>
+                        </div>          
                     </div>
-                    </div>
                 </div>
-
-                {/* Sezioni aggiuntive */}
-                <div className="mt-5">
-                    <h4>Benefici</h4>
-                    {plant.benefits?.length ? (
-                    <ul>
-                        {plant.benefits.map((b) => (
-                        <li key={b.id}>{b.name}</li>
-                        ))}
-                    </ul>
-                    ) : (
-                    <p className="text-muted">Nessun beneficio registrato.</p>
-                    )}
-
-                    <h4 className="mt-4">Controindicazioni</h4>
-                    {plant.controindications?.length ? (
-                    <ul>
-                        {plant.controindications.map((c) => (
-                        <li key={c.id}>{c.name}</li>
-                        ))}
-                    </ul>
-                    ) : (
-                    <p className="text-muted">Nessuna controindicazione nota.</p>
-                    )}
-                </div>
-                </div>
-        );
+            </div>
+        </div>
+    );
 }
 
 export default SinglePlantPage;

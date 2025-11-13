@@ -4,7 +4,7 @@ const Homepage =() =>{
     return(
         
             <section >
-            <div class="container text-center">
+            <div className="container text-center">
 
             <h1 className="pt-4">The alchemist's Garden</h1>
             <h2>Explore the arcane botany of healing</h2>

@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import fetchObjects from "../services/fetchObjects";
+import SmallTable from "../components/SmallTable";
 
 const ControindicationsPage =()  =>{
   const [controindications, setControindications] = useState([]);
@@ -43,38 +44,7 @@ const ControindicationsPage =()  =>{
                     
 
                     {/* Tabella */}
-                    <div className="table-responsive">
-                        <table className="table table-striped table-hover align-middle">
-                        <thead className="table-success">
-                            <tr>
-                            <th>ID</th>
-                            <th>Nome</th>
-                            <th>Descrizione</th>
-                            <th>Azioni</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {controindications.map((controindication) => (
-                            <tr key={controindication.id}>
-                                <td>{controindication.id}</td>
-                                <td><em>{controindication.name}</em></td>
-                                <td>{controindication.description}</td>
-                                
-                                <td>
-                                <Link to={`/controindications/${controindication.id}`} className="btn btn-outline-success btn-sm">Dettagli</Link>
-                                </td>
-                            </tr>
-                            ))}
-                        </tbody>
-                        </table>
-                    </div>
-
-                    {/* Nessun risultato */}
-                    {controindications.length === 0 && (
-                        <div className="alert alert-warning mt-4 text-center">
-                        Nessuna controindicazione trovata.
-                        </div>
-                    )}
+                    <SmallTable elementList={controindications} route={"controindications"} emptyString={"Nessuna controindicazione trovata."} />
             </div>
     </section>
     
