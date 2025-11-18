@@ -8,6 +8,7 @@ const PlantsPage =() => {
   const [plants, setPlants] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [viewMode, setViewMode] = useState('table');
 
   useEffect(() => {
     fetchObjects("plants",setPlants, setIsLoading, setError );
