@@ -33,7 +33,6 @@ const BenefitsPage =()  =>{
   return (
     <section>
             <div className="container mt-5">
-                    {/* Introduzione */}
                     <header className="text-center mb-5">
                         <h1 className="display-5 fw-bold text-success">Catalogo dei benefici</h1>
                         <p className="lead text-muted">
@@ -41,9 +40,7 @@ const BenefitsPage =()  =>{
                         Qui troverai piante medicinali, aromatiche e rare, ciascuna con la propria storia e i suoi benefici.
                         </p>
                     </header>
-                    
-
-                   <SmallTable elementList={benefits} route={"benefits"} emptyString={"Nessuna beneficio trovato."} />
+                  <SmallTable elementList={benefits} route={"benefits"} emptyString={"Nessuna beneficio trovato."} />
             </div>
     </section>
     

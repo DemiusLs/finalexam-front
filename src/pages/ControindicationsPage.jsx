@@ -33,7 +33,6 @@ const ControindicationsPage =()  =>{
   return (
     <section>
             <div className="container mt-5">
-                    {/* Introduzione */}
                     <header className="text-center mb-5">
                         <h1 className="display-5 fw-bold text-success">Catalogo dei benefici</h1>
                         <p className="lead text-muted">
@@ -41,9 +40,6 @@ const ControindicationsPage =()  =>{
                         Qui troverai piante medicinali, aromatiche e rare, ciascuna con la propria storia e i suoi benefici.
                         </p>
                     </header>
-                    
-
-                    {/* Tabella */}
                     <SmallTable elementList={controindications} route={"controindications"} emptyString={"Nessuna controindicazione trovata."} />
             </div>
     </section>

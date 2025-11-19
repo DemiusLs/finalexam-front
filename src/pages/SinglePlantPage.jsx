@@ -42,7 +42,7 @@ const SinglePlantPage = () =>{
                     {/* Immagine */}
                     <div className="col-lg-4 col-md-5">
                         <img
-                        src={plant.imageUrl || "https://via.placeholder.com/400x300?text=No+Image"}
+                        src={plant.imageUrl || "https://placehold.co/300x400?text=Nessuna+Immagine"}
                         alt={plant.commonName}
                         className="img-fluid rounded-start h-100 object-cover "
                         />

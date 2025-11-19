@@ -38,15 +38,12 @@ const SingleFamilyPage = () =>{
 
      return (
             <div className="container mt-5">
-            {/* Intestazione */}
             <header className="text-center mb-5">
                 <h1 className="display-5 fw-bold text-success">{family.name}</h1>
                 <p className="lead text-muted">
                 {family.description || "Nessuna descrizione disponibile."}
                 </p>
             </header>
-
-            {/* Sezione piante collegate */}
             <section>
                 <h3 className="mb-3 text-success">Piante di questa famiglia</h3>
                 {family.plants && family.plants.length > 0 ? (
@@ -57,8 +54,6 @@ const SingleFamilyPage = () =>{
                 </div>
                 )}
             </section>
-
-            {/* Pulsante di ritorno */}
             <div className="text-center mt-5">
                 <Link to="/families" className="btn btn-outline-secondary">
                 ← Torna all'elenco delle famiglie

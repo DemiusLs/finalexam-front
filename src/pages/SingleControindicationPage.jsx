@@ -38,15 +38,12 @@ const SingleControindicationPage = () =>{
 
      return (
             <div className="container mt-5">
-            {/* Intestazione */}
             <header className="text-center mb-5">
                 <h1 className="display-5 fw-bold text-success">{controindication.name}</h1>
                 <p className="lead text-muted">
                 {controindication.description || "Nessuna descrizione disponibile."}
                 </p>
             </header>
-
-            {/* Sezione piante collegate */}
             <section>
                 <h3 className="mb-3 text-success">Piante con queste controindicazioni</h3>
                 {controindication.plants && controindication.plants.length > 0 ? (
@@ -57,8 +54,6 @@ const SingleControindicationPage = () =>{
                 </div>
                 )}
             </section>
-
-            {/* Pulsante di ritorno */}
             <div className="text-center mt-5">
                 <Link to="/controindications" className="btn btn-outline-secondary">
                 ← Torna all'elenco delle controindicazioni

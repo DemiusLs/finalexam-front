@@ -7,19 +7,20 @@ const SmallTable = ({elementList, route, emptyString}) =>{
                         <table className="table table-striped table-hover align-middle">
                         <thead className="table-success">
                             <tr>
-                            <th>ID</th>
+                            {/* <th>ID</th> */}
                             <th>Nome</th>
                             <th>Descrizione</th>
-                            <th>Azioni</th>
+                            <th>Linked plants</th>
+                            <th>Azioni</th>                            
                             </tr>
                         </thead>
                         <tbody>
                             {elementList.map((element) => (
                             <tr key={element.id}>
-                                <td>{element.id}</td>
+                                {/* <td>{element.id}</td> */}
                                 <td><em>{element.name}</em></td>
                                 <td>{element.description}</td>
-                                
+                                <td>{element.plants.length}</td>
                                 <td>
                                 <Link to={`/${route}/${element.id}`} className="btn btn-outline-success btn-sm">Dettagli</Link>
                                 </td>

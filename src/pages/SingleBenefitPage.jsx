@@ -38,15 +38,12 @@ const SingleBenefitPage = () =>{
 
      return (
             <div className="container mt-5">
-            {/* Intestazione */}
             <header className="text-center mb-5">
                 <h1 className="display-5 fw-bold text-success">{benefit.name}</h1>
                 <p className="lead text-muted">
                 {benefit.description || "Nessuna descrizione disponibile."}
                 </p>
             </header>
-
-            {/* Sezione piante collegate */}
             <section>
                 <h3 className="mb-3 text-success">Piante con questo beneficio</h3>
                 {benefit.plants && benefit.plants.length > 0 ? (
@@ -57,8 +54,6 @@ const SingleBenefitPage = () =>{
                 </div>
                 )}
             </section>
-
-            {/* Pulsante di ritorno */}
             <div className="text-center mt-5">
                 <Link to="/benefits" className="btn btn-outline-secondary">
                 ← Torna all'elenco dei benefici

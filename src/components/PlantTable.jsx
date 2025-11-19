@@ -7,7 +7,7 @@ const PlantTable = ({plants}) =>{
                 <table className="table table-striped table-hover align-middle">
                     <thead className="table-success">
                         <tr>
-                        <th>ID</th>
+                        {/* <th>ID</th> */}
                         <th>Nome Scientifico</th>
                         <th>Nome Comune</th>
                         <th>Famiglia</th>
@@ -19,10 +19,10 @@ const PlantTable = ({plants}) =>{
                         <tbody>
                             {plants.map((plant) => (
                             <tr key={plant.id}>
-                                <td>{plant.id}</td>
+                                {/* <td>{plant.id}</td> */}
                                 <td><em>{plant.scientificName}</em></td>
                                 <td>{plant.commonName}</td>
-                                <td>{plant.family?.name || "—"}</td>
+                                <td>{plant.family || "—"}</td>
                                 <td>{plant.habitat || "—"}</td>
                                 <td>
                                 {plant.toxic ? (

@@ -33,7 +33,6 @@ const FamiliesPage =()  =>{
   return (
     <section>
             <div className="container mt-5">
-                    {/* Introduzione */}
                     <header className="text-center mb-5">
                         <h1 className="display-5 fw-bold text-success">Catalogo delle famiglie</h1>
                         <p className="lead text-muted">
@@ -41,10 +40,7 @@ const FamiliesPage =()  =>{
                         Qui troverai piante medicinali, aromatiche e rare, ciascuna con la propria storia e i suoi benefici.
                         </p>
                     </header>
-                    
-
-                   {/* Tabella */}
-                    <SmallTable elementList={families} route={"families"} emptyString={"Nessuna famiglia trovata."} />
+                  <SmallTable elementList={families} route={"families"} emptyString={"Nessuna famiglia trovata."} />
             </div>
     </section>
     
